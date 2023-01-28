@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YskPomodoro</title>
+    <style>
+        h1{
+            text-align: center;
+            color: rgb(0, 0, 0);
+            
+            text-shadow: 0pt;
+            
+            font-size: 400%;
+        }
+        body{
+            color: rgb(176, 255, 187);
+            background-color: aquamarine;
+        }
+        h1:hover{
+            height: 50%;
+            color: rgb(47, 14, 233);
+            font-size: 450%;
+            text-shadow: 10pt;
+        }
+
+    </style>
+</head>
+<body>
+    <input type="color" name="" id="r">
+    <button onclick="rd()">Renk Değiştir</button>
+    <h1 id="a">Çalışma Vakti</h1>
+    <script>
+        var durum = "Çalışma Vakti";
+        function rd(){
+            var c = document.getElementById("r").value;
+            document.body.style.backgroundColor = c;
+        }
+    </script>
+    <h1 id="dakika">00:00</h1>
+    <script>
+        var dakika = 1;
+        var saniye = 00;
+        var tdakika = 1;
+        var ds = 3;
+        var tsaniye = 00;
+        var ts=ds;
+        var u = dakika + ":" + saniye 
+        document.getElementById("dakika").innerHTML = u;
+        
+        function i(){
+            if(dakika>=1&&saniye==0){
+             saniye+=60;
+             dakika-=1;
+            
+             var u = dakika + ":" + saniye 
+             document.getElementById("dakika").innerHTML = u;
+            }
+            else if(saniye>0){
+             saniye--;
+            
+             var u = dakika + ":" + saniye 
+             document.getElementById("dakika").innerHTML = u;
+            }
+            
+
+         }
+        function t(){
+         if(!(dakika<=0&&saniye<=0)){
+            setInterval(i,1000)
+            document.getElementById("a").innerHTML=durum;
+            
+
+         }
+         else{
+            durum = "Mola Vakti";
+            document.getElementById("a").innerHTML = "Mola Vakti"
+         }
+        }
+        t()
+        function a(){
+            if(durum=="Mola Vakti"&&dakika==0&&saniye==0){
+                document.getElementById("a").innerHTML = "Mola Vakti";
+                if(dakikat>=1&&saniyet==0){
+                  saniyet+=60;
+                  dakikat-=1;
+            
+                  var ut = dakikat + ":" + saniyet
+                  document.getElementById("dakika").innerHTML = ut;
+                }
+                else if(saniyet>0){
+                    saniyet--;
+            
+                    var ut = dakikat + ":" + saniyet 
+                    document.getElementById("dakika").innerHTML = ut;
+                }
+
+            }
+            function tt(){
+              if(!(dakika<=0&&saniye<=0)){
+                setInterval(i,1000)
+                document.getElementById("a").innerHTML=durum;
+            
+
+               }
+               else{
+                 durum = "Mola Vakti";
+                } 
+            }
+            tt()
+
+        }
+        a()
+        
+        
+        
+        
+        
+    </script>
+    <audio src=""></audio>
+    <audio src=""></audio>
+    <audio src=""></audio>
+    
+</body>
+</html>
